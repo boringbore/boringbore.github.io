@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="seeessess.css" />
+<script src="javahskriped.js"></script>
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p>The date is <span id="date"></span><br>The time is: <span id="time"></span></p>
+    <p id="why">Drag and drop the icons</p>
+
+    <div class="textcenter">
+        <button class = "right" type="button" onclick="mode()" >
+            the way things should be (dark mode)
+        </button>
+    </div>
+
+    
+
+    <table class="center" id="table">
+        <tr>
+            <th> Time </th>
+            <th> Monday </th>
+            <th> Tuesday </th>
+            <th> Wednesday </th>
+            <th> Thursday </th>
+            <th> Friday </th>
+            <th> Saturday </th>
+            <th> Sunday </th>
+        </tr>
+        <tr>
+            <td class = "grey"> 7:00-9:00 </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>     <!-- this entire thing can probably be simplified -->
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+        </tr>
+        <tr>
+            <td class = "grey"> 9:00-11:00 </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+        </tr>
+        <tr>
+            <td class = "grey"> 11:00-1:00 </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+        </tr>
+        <tr>
+            <td class = "grey"> 1:00-3:00 </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+        </tr>
+        <tr>
+            <td class = "grey"> 3:00-5:00 </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+            <td ondrop="drop(event)" ondragover="allowDrop(event)">  </td>
+        </tr>
+    </table>
+
+<div id="drag">
+    <img id="draganimal" src="whywouldyoutakethis.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="draganimal1" src="whywouldyoutakethis.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="draganimal2" src="whywouldyoutakethis.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragbiol" src="why3.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragbiol1" src="why3.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragbiol2" src="why3.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragfield" src="badtimes.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragfield1" src="badtimes.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+    <img id="dragfield2" src="badtimes.png" draggable="true" ondragstart="drag(event)" width="90" length="90">
+</div>
+
+<button id="reset" onclick="refresh()">
+    Reset
+</button>
+
+</body>
+</html>
+
+<script>
+    var date = new Date();
+    document.getElementById("date").innerHTML = date.toDateString();
+    window.onload = clock();
+    function clock(){
+        var timeshow = new Date().toLocaleTimeString();
+        document.getElementById('time').innerHTML = timeshow;
+        setTimeout(clock, 1000); 
+    }
+</script>
+
